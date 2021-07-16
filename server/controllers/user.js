@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 const userModel = require('../models/user.js');
 const yapi = require('../yapi.js');
 const baseController = require('./base.js');
@@ -529,8 +530,8 @@ class userController extends baseController {
 	  try {
 		  let user = await userInst.save(data);
 
-		  this.setLoginCookie(user._id, user.passsalt);
-		  await this.handlePrivateGroup(user._id, user.username, user.email);
+		  // this.setLoginCookie(user._id, user.passsalt);
+		  // await this.handlePrivateGroup(user._id, user.username, user.email);
 		  ctx.body = yapi.commons.resReturn({
 			  uid: user._id,
 			  email: user.email,

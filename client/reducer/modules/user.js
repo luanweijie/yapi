@@ -102,13 +102,13 @@ export default (state = initialState, action) => {
     }
     case ADD: {
       return {
-        ...state,
-        isLogin: true,
-        loginState: MEMBER_STATUS,
-        uid: action.payload.data.data.uid,
-        userName: action.payload.data.data.username,
-        type: action.payload.data.data.type,
-        study: action.payload.data.data ? action.payload.data.data.study : false
+        ...state
+        // isLogin: true,
+        // loginState: MEMBER_STATUS,
+        // uid: action.payload.data.data.uid,
+        // userName: action.payload.data.data.username,
+        // type: action.payload.data.data.type,
+        // study: action.payload.data.data ? action.payload.data.data.study : false
       };
     }
     case SET_BREADCRUMB: {
