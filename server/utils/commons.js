@@ -13,7 +13,6 @@ const json5 = require('json5');
 const _ = require('underscore');
 const Ajv = require('ajv');
 const Mock = require('mockjs');
-// const sandboxFn = require('./sandbox')
 
 
 
@@ -541,6 +540,7 @@ exports.runCaseScript = async function runCaseScript(params, colId, interfaceId)
       logs.push('log: ' + convertString(msg));
     }
   };
+
   let result = {};
   try {
 
@@ -576,7 +576,6 @@ ${JSON.stringify(schema, null, 2)}`)
       // script 是断言
       if (globalScript) {
         logs.push('执行脚本：' + globalScript)
-        // result = await sandboxFn(context, globalScript);
         result = yapi.commons.sandbox(context, globalScript);
       }
     }
@@ -586,7 +585,6 @@ ${JSON.stringify(schema, null, 2)}`)
     // script 是断言
     if (script) {
       logs.push('执行脚本:' + script)
-      // result = await sandboxFn(context, script);
       result = yapi.commons.sandbox(context, script);
     }
     result.logs = logs;
@@ -634,8 +632,7 @@ exports.handleMockScript = function (script, context) {
       var parts = Cookie.split('=');
       sandbox.cookie[parts[0].trim()] = (parts[1] || '').trim();
     });
-  // sandbox = await sandboxFn(sandbox, script);
-  sandbox = yapi.commons.sandbox(context, script);
+  sandbox = yapi.commons.sandbox(sandbox, script);
   sandbox.delay = isNaN(sandbox.delay) ? 0 : +sandbox.delay;
 
   context.mockJson = sandbox.mockJson;

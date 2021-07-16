@@ -207,6 +207,6 @@ module.exports = function() {
 
     // mock 脚本
     let script = data.mock_script;
-    await yapi.commons.handleMockScript(script, context);
+    yapi.commons.handleMockScript(script, context);
   });
 };
