@@ -19,5 +19,14 @@
       "user": "noreply_rlyy@163.com",
       "pass": "IARWEAPLEKKOYIPH"
     }
-  }
+  },
+  "ldapLogin": {
+    "enable": true,
+    "server": "ldap://192.168.3.37:389",
+    "baseDn": "cn=admin,dc=rlyy,dc=com",
+    "searchDn": "ou=People,dc=rlyy,dc=com",
+    "searchStandard": "mail",
+    "emailPostfix": "@ronglianyiyun.com",
+    "usernameKey": "uid"
+ }
 }
